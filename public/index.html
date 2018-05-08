@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="StayHuman">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script src="/js/app.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="/css/main.css">
+    <title>stayHuman</title>
+  </head>
+  <body ng-controller="MyController as ctrl">
+    {{ctrl.human}}
+    {{2+6}}
+
+<div id="container">
+  <div id="header">
+    <h1>Stay Human</h1>
+    <h2>An app to help you stay more than just alive.</h2>
+  </div>
+
+  <div id="choicesContainer">
+    <h1>Complete 5 Items</h1>
+      <form ng-submit="ctrl.createTodo()">
+        {{ctrl.description}} - {{ctrl.complete}}
+        <input id="input-box" ng-model="ctrl.description" type="text" />
+        Complete: <input type="checkbox" ng-model="ctrl.complete"/>
+        <input type="submit" value="ADD"/>
+      </form>
+
+
+  </div>
+
+
+
+
+  <div id="toDo">
+    <h3>Cool things to do today:</h3>
+        <ul>
+          <li
+              ng-repeat="todo in ctrl.todos"
+              ng-class="(todo.complete)?'complete':''">
+                  {{todo.description}}
+          </li>
+        </ul>
+  </div>
+
+  <div id="completedContainer">
+    <h3>Did these:</h3>
+
+  </div>
+
+</div>
+
+  </body>
+</html>
