@@ -4,77 +4,84 @@ const app = angular.module('StayHuman', []);
 
 app.controller('MyController', ['$http', function($http){
   const controller = this;
+  this.tasks = [];
+  this.complete = false;
 
-  this.createTodo = function(){
+
+  this.getTasks = function(){
+  $http({
+    method:'GET',
+    url: '/tasks',
+  }).then(function(response){
+    controller.tasks = response.data
+  }, function(){
+    console.log('get error');
+  });
+};
+
+
+  this.createTasks = function(){
     $http({
       method:'POST',
-      url:'/todos',
+      url:'/tasks',
       data: {
         description: this.description,
         complete: this.complete
       }
     }).then(function(response){
-      controller.getTodos;
+      controller.getTasks();
     }, function(){
       console.log('error');
     });
   }
 
-  this.getTodos = function(){
-      $http({
-          method:'GET',
-          url: '/todos',
-      }).then(function(response){
-          controller.todos = response.data;
-      }, function(){
-          console.log('GET error');
-      });
-  };
-    this.getTodos();
-}]);
+  this.toggleTasksComplete = function(tasks){
+        console.log(tasks);
+        let newCompleteValue;
+        if(tasks.complete === true){
+            newCompleteValue = false
+        } else {
+            newCompleteValue = true
+        }
+
+        $http({
+            method:'PUT',
+            url:'/tasks/' + tasks._id,
+            data: {
+                description: tasks.description,
+                complete: newCompleteValue
+            }
+        }).then(function(response){
+            controller.getTasks();
+        })
+    }
+
+    this.deleteTasks = function(tasks){
+        $http({
+            method:'DELETE',
+            url:'/tasks/' + tasks._id
+        }).then(function(response){
+            controller.getTasks();
+        })
+    }
+
+    this.editTasks = function(tasks){
+        $http({
+            method:'PUT',
+            url:'/tasks/' + tasks._id,
+            data: {
+                description: this.updatedDescription,
+                complete: tasks.complete
+            }
+        }).then(function(response){
+            controller.getTasks();
+        })
+    }
 
 
 
 
 
+this.getTasks();
 
-//jquery stuff
-
-// $(()=>{
-//   $('#submit').on('click', addCompleted);
-// });
-//
-// const addCompleted = ()=>{
-//   const $inputBox = $('#input-box');
-//   const todo = $inputBox.val();
-//   $inputBox.val('');
-//
-//   const $div = $('<div>')
-//     .addClass('to-do-item')
-//     .html('<h3>' + todo + '</h3>');
-//
-//   $('#to-do-list').append($div);
-//
-//
-// const $button = $('<button>')
-//   .text('Completed')
-//   .on('click', moveToDo)
-//   .appendTo($div)
-// }
-//
-// const moveToDo = ()=>{
-//   const $toDoDiv = $(event.currentTarget).parent();
-//
-// $toDoDiv
-//   .removeClass('to-do-item')
-//   .addClass('done-item')
-//   .appendTo($('#completed'))
-//   .children()
-//   .eq(1)
-//   .text(remove)
-//   .on('click', removeToDo)
-// }
-//
-// const removeToDo = ()=>{
-//   $(event.currentTarget).parent().remove();
-// }
+}]); //closes app.controller
