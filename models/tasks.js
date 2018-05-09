@@ -6,4 +6,4 @@ const tasksSchema = mongoose.Schema({
 
 const Tasks = mongoose.model('Tasks', tasksSchema);
 
-module.exports = Tasks
+module.exports = Tasks;
