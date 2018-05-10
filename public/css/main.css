@@ -2,3 +2,13 @@
 
   background-image: url(/img/tileable_wood_texture.png);
 }
+
+
+
+.createUser {
+  background: pink;
+}
+
+.loginUser {
+  background: gold;
+}
