@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const methodOverride = require('method-override');
 
+
+app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.use(session({
     secret:'jagälskarrebell',
