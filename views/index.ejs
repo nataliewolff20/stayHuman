@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
+          <!-- // Firebase //       -->
+        <!-- <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyCqPD5dntVK0rqcWoKcbCNkUS5LUCXuikI",
+            authDomain: "stay-human.firebaseapp.com",
+            databaseURL: "https://stay-human.firebaseio.com",
+            projectId: "stay-human",
+            storageBucket: "",
+            messagingSenderId: "678874194176"
+          };
+          firebase.initializeApp(config);
+        </script> -->
+
         <link rel="stylesheet" href="/css/main.css">
         <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
         <meta charset="utf-8">
@@ -19,9 +34,14 @@
                             <div id="header">
           <h1 class="title">Stay Human</h1>
             <h2 class="subtitle">An app to help you stay more than just alive.</h2>
+            
           <section class="section">
-          <% include ../partials/login.ejs %>
+          <% include ../partials/navbar.ejs %>
           </section>
+<!--
+          <section class="section">
+          <% include ../partials/signup.ejs %>
+          </section> -->
 
           <section class="section">
           <% include ../partials/tasks.ejs %>
