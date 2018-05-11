@@ -7,12 +7,16 @@
     </head>
     <body>
       <div class="loginUser">
-        <h1>Sign In</h1>
-        <form action="/sessions" method="POST">
-            <input type="text" name="username" placeholder="username"/>
-            <input type="password" name="password" />
-            <input type="submit" value="Log In" />
+        <div class="field">
+          <label class="label">Sign In</label>
+          <div class="control">
+            <form action="/sessions" method="POST">
+                <input class="input"type="text" name="username" placeholder="username"/>
+                <input class="input"type="password" name="password"/>
+                <input type="submit" value="Log In" />
+            </div>
         </form>
+        </div>
       </div>
     </body>
 </html>
