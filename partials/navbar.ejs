@@ -1,13 +1,32 @@
-<nav class="navbar"role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/"> <img src="/img/logo.png" alt="stayHuman logo" >
 
+  <div class="navbar">
+
+
+
+    <div class="login" >
     <ul>
       <li><a href="/sessions/new">Log In</a></li>
       <li><a href="/users/new">Register</a></li>
     </ul>
+    </div>
 
+
+    <h1 class="custom">
+       <% if(currentUser) { %>
+           Welcome <%=currentUser.username%>!
+       <% } else { %>
+
+       <% } %>
+    </h1>
+
+    <h3 class="logout">
+      <% if(currentUser) { %>
+
+        <form action="/sessions?_method=DELETE" method="POST">
+            <input type="submit" value="LOGOUT"/>
+        </form>
+
+    <% } %>
+    </h3>
 
   </div>
-
-  </nav>

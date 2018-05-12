@@ -2,42 +2,117 @@
   font-family: 'TheSaturday-Clean';
   src: url(/fonts/TheSaturday-Clean.otf);
 }
+@font-face {
+  font-family: 'Steadfast-Regular';
+  src: url(/fonts/Steadfast-Regular.otf);
+}
 
-h1 {
-  font-family: 'TheSaturday-Clean', Fallback, sans-serif;
-  font-size: 30px;
-  color: white;
+*{
+  background: url(/img/beige_paper.png);
+}
+
+.header{
+  height: 200px;
+  text-align: center;
+  color: brown;
+  font-family: 'Steadfast-Regular',Fallback, sans-serif ;
+
+}
+
+ .header > h1{
+
+  font-size: 90px;
+}
+
+.header > h2{
+  font-size: 25px;
+
+
 }
 .container {
-
-  background-image: url(/img/tileable_wood_texture.png);
+  width: 90%;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 20px;
+  grid-column-gap: 10px;
+  border-radius: 10px;
 
 }
 
-#to-do-list, #completed {
-  border: solid navy 2px;
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-  margin: 0 auto;
+.nav{
+  border: solid red 2px;
+  height: 100px;
+
 }
+
+
+.login {
+  text-align: left;
+}
+
+
+.title{
+
+}
+
+.column{
+  border: solid pink 2px;
+  /* position: relative; */
+
+}
+
+
 
 p {
+  font-family: 'Steadfast-Regular',Fallback, sans-serif ;
+  font-size: 16px;
+  color: white;
   border: solid black 2px;
   text-align: center;
-  width: 50px;
-	height: 50px;
-	background: gray;
+  width: 80px;
+	height: 80px;
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
 	border-radius: 50px;
+  line-height: 0;
+
+  display: table-cell;
+
+  vertical-align: middle;
+
+
+
+
 }
 
 
-
-
-
-
+#snack {
+  background: pink;
+}
+#nap {
+  background: red;
+}
+#walk {
+  background: blue;
+}
+#fruit {
+  background: green;
+}
+#record {
+  background: purple;
+}
+#call {
+  background: orange;
+}
+#water {
+  background: teal;
+}
+#shower {
+  background: gray;
+}
+#read {
+  background: brown;
+}
 
 
 
@@ -63,4 +138,10 @@ p {
   margin: 10px 0;
   box-sizing:border-box;
 
+}
+
+
+
+.navbar-item, img {
+  height: 30px;
 }
