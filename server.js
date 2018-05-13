@@ -4,6 +4,7 @@ const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 const session = require('express-session');
 const methodOverride = require('method-override');
+const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/stayhuman'
 
 
 app.use(express.static('public'));
@@ -37,11 +38,18 @@ app.get('/app', (req, res)=>{
     }
 });
 
+mongoose.connect(mongoUri);
 mongoose.connect('mongodb://localhost:27017/stayHuman');
 
 mongoose.connection.once('open', ()=>{
     console.log('mongods r here');
 })
+
+const port = process.env.PORT || 3000;
+app.listen(port);
+console.log('---------------------------------');
+console.log('Server running on port: ' + port);
+console.log('---------------------------------');
 
 app.listen(3000, ()=>{
     console.log('lyssnande');
