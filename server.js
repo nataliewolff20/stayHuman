@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 const session = require('express-session');
 const methodOverride = require('method-override');
@@ -50,7 +49,3 @@ app.listen(port);
 console.log('---------------------------------');
 console.log('Server running on port: ' + port);
 console.log('---------------------------------');
-
-app.listen(3000, ()=>{
-    console.log('lyssnande');
-});
