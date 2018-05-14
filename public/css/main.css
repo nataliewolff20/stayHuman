@@ -20,7 +20,7 @@
 }
 
 .header{
-  height: 200px;
+  height: 300px;
   text-align: center;
   color: brown;
   font-family: 'Steadfast-Regular',Fallback, sans-serif ;
@@ -33,9 +33,14 @@
 }
 
 .header > h2{
+  font-family: 'Wunderland',Fallback, sans-serif ;
+  font-size: 35px;
+}
+
+.header > h3 {
+  font-family: 'Wunderland',Fallback, sans-serif ;
   font-size: 25px;
-
-
+  color: black;
 }
 .container {
   width: 100%;
@@ -67,7 +72,7 @@
 #to-do-list, #completed > h1 {
   /* border: solid pink 2px; */
   font-family: 'Steadfast-Regular',Fallback, sans-serif ;
-  font-size: 32px;
+  font-size: 36px;
 }
 
 p {
@@ -89,31 +94,31 @@ p {
 
 
 #snack {
-  background: pink;
+  background: #1855A5;
 }
 #nap {
-  background: red;
+  background: #2C81D2;
 }
 #walk {
-  background: blue;
+  background: #75B6E0;
 }
 #fruit {
-  background: green;
+  background: #AACDE1;
 }
 #record {
-  background: purple;
+  background: #AACDE1;
 }
 #call {
-  background: orange;
+  background: #647D7A;
 }
 #water {
-  background: teal;
+  background: #857B62;
 }
 #shower {
-  background: gray;
+  background: #4C4727;
 }
 #read {
-  background: brown;
+  background: #997D58;
 }
 
 
@@ -149,12 +154,12 @@ a:hover {
 
 }
 
- form{
+.loginUser, .createUser > form{
   font-family: 'Wunderland' ;
-  color: white;
-  background: url(https://i.imgur.com/X6doB3v.jpg);
-  background-size: cover;
-  background-position: center;
+  color: brown;
+  /* background: url(https://i.imgur.com/X6doB3v.jpg); */
+  /* background-size: cover;
+  background-position: center; */
   width: 100%;
   height: 600px;
   display: inline-block;
@@ -178,11 +183,9 @@ a:hover {
 }
 
 .login {
-  /* border: solid black 2px; */
-  text-align: left;
-  color: black;
+  text-align: center;
   font-family: 'ServiceStation-Regular',Fallback, sans-serif ;
-  text-decoration-color: black;
+  font-size: 16px;
 }
 
 
@@ -191,4 +194,5 @@ a:hover {
 .footer {
   display: inline-block;
   font-family: 'ServiceStation-Regular',Fallback, sans-serif ;
+  align-content: center;
 }
