@@ -186,8 +186,17 @@ a:hover {
   text-align: center;
   font-family: 'ServiceStation-Regular',Fallback, sans-serif ;
   font-size: 16px;
+  display: inline-block;
+  margin: 0 auto;
+
 }
 
+.logout{
+  align-self: right;
+  margin: 0 auto;
+
+
+}
 
 /* FOOTER */
 
